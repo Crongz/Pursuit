@@ -7,14 +7,30 @@
 //
 
 import UIKit
+import Parse
 
-class ViewController: UIViewController {
+class LoginViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    @IBOutlet var txtUsername : UITextField!
+    @IBOutlet var txtPassword : UITextField!
+    
+    @IBAction func log_in (sender : UIButton){
+        println("button tapped!")
+        PFUser.logInWithUsernameInBackground(txtUsername.text, password:txtPassword.text) {
+            (user: PFUser!, error: NSError!) -> Void in
+            if user != nil {
+                self.performSegueWithIdentifier("login_success", sender: self)
+                println("Login success");
+                // Do stuff after successful login.
+            } else {
+                println("Login failed");
+                // The login failed. Check error to see why.
+            }
+        }
     }
-
+    @IBAction func backgroudtap(sender: UITapGestureRecognizer) {
+        self.view.endEditing(true);
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
