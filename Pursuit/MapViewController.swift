@@ -36,7 +36,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         
         /* Span measured in meters */
         let region = MKCoordinateRegionMakeWithDistance(
-            userLocation.location.coordinate, 100, 100)
+            userLocation.location.coordinate, 500, 500)
         
         mapView.setRegion(region, animated: true)
     }

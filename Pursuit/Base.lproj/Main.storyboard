@@ -119,6 +119,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="0FS-xs-rla">
+                                <rect key="frame" x="0.0" y="0.0" width="374" height="667"/>
+                            </mapView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cs6-9B-UwY">
                                 <rect key="frame" x="169" y="611" width="36" height="36"/>
                                 <state key="normal" image="Map_Button.png">
@@ -128,12 +131,12 @@
                                     <action selector="zoomIn:" destination="eEA-b2-mCM" eventType="touchUpInside" id="eSa-uR-i6O"/>
                                 </connections>
                             </button>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="0FS-xs-rla">
-                                <rect key="frame" x="0.0" y="0.0" width="374" height="667"/>
-                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="0FS-xs-rla" id="iQh-I9-8Tc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="45U-Dg-QRK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
