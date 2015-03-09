@@ -107,10 +107,10 @@
                 </tapGestureRecognizer>
             </objects>
         </scene>
-        <!--View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="GXb-5y-L5J">
             <objects>
-                <viewController id="eEA-b2-mCM" sceneMemberID="viewController">
+                <viewController id="eEA-b2-mCM" customClass="MapViewController" customModule="Pursuit" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="G7K-Hd-9Bc"/>
                         <viewControllerLayoutGuide type="bottom" id="xbv-5o-eOK"/>
@@ -119,15 +119,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="0FS-xs-rla">
-                                <rect key="frame" x="0.0" y="0.0" width="374" height="667"/>
-                            </mapView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cs6-9B-UwY">
                                 <rect key="frame" x="169" y="611" width="36" height="36"/>
                                 <state key="normal" image="Map_Button.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="zoomIn:" destination="eEA-b2-mCM" eventType="touchUpInside" id="eSa-uR-i6O"/>
+                                </connections>
                             </button>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="0FS-xs-rla">
+                                <rect key="frame" x="0.0" y="0.0" width="374" height="667"/>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>

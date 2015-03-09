@@ -24,6 +24,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     
     // Not Sure if this works
     override func viewDidLoad() {
+        super.viewDidLoad()
         mapView.delegate = self
         self.mapView.showsUserLocation = true
         self.mapView.mapType = MKMapType.Standard
