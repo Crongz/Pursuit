@@ -12,17 +12,17 @@ import MapKit
 import CoreLocation
 
 class MapViewController: UIViewController, MKMapViewDelegate {
-   
-    // Permissions should be working. Got Location Permission pop up.
-    // Inserted stuff in info.plist as well
-    // Need to work on basically everything else
+
+    /** 
+     *  Permissions should be working.
+     *  Got Location Permission pop up.
+     *  Inserted stuff in info.plist as well
+     */
     
     
     // Figure out what this does
     @IBOutlet weak var mapView: MKMapView!
     
-    
-    // Not Sure if this works
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.delegate = self
@@ -30,7 +30,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         self.mapView.mapType = MKMapType.Standard
     }
     
-    // Current Location button
+    /* Current location button */
     @IBAction func zoomIn(sender: UIButton) {
         let userLocation = mapView.userLocation
         
@@ -40,6 +40,4 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         
         mapView.setRegion(region, animated: true)
     }
-    
-    
 }

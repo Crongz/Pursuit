@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5EF140E41AAD254F00C35DA2 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF140E31AAD254F00C35DA2 /* MapViewController.swift */; };
 		5EF140E61AAD260200C35DA2 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EF140E51AAD260200C35DA2 /* MapKit.framework */; };
+		5EF140E81AAD432C00C35DA2 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF140E71AAD432C00C35DA2 /* Data.swift */; };
 		6844E46C1AA66C33000E779E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6844E46B1AA66C33000E779E /* AppDelegate.swift */; };
 		6844E46F1AA66C33000E779E /* Pursuit.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6844E46D1AA66C33000E779E /* Pursuit.xcdatamodeld */; };
 		6844E4711AA66C33000E779E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6844E4701AA66C33000E779E /* LoginViewController.swift */; };
@@ -56,6 +57,7 @@
 /* Begin PBXFileReference section */
 		5EF140E31AAD254F00C35DA2 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		5EF140E51AAD260200C35DA2 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		5EF140E71AAD432C00C35DA2 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		6844E4661AA66C33000E779E /* Pursuit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pursuit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6844E46A1AA66C33000E779E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6844E46B1AA66C33000E779E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 			children = (
 				6844E46B1AA66C33000E779E /* AppDelegate.swift */,
 				5EF140E31AAD254F00C35DA2 /* MapViewController.swift */,
+				5EF140E71AAD432C00C35DA2 /* Data.swift */,
 				6844E4701AA66C33000E779E /* LoginViewController.swift */,
 				6844E4BD1AA68BCD000E779E /* SignupViewController.swift */,
 				6844E4BF1AA6924D000E779E /* ProfileViewController.swift */,
@@ -336,6 +339,7 @@
 				6844E4C21AA6925F000E779E /* ProfileEditViewController.swift in Sources */,
 				6844E46C1AA66C33000E779E /* AppDelegate.swift in Sources */,
 				5EF140E41AAD254F00C35DA2 /* MapViewController.swift in Sources */,
+				5EF140E81AAD432C00C35DA2 /* Data.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
