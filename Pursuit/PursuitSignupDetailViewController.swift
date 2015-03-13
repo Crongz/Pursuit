@@ -12,7 +12,7 @@ import Foundation
 import UIKit
 import Parse
 
-class SignupDetailViewController: UITableViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+class PursuitSignupDetailViewController: UITableViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     @IBOutlet var userfirst: UITextField!
     @IBOutlet var userlast: UITextField!
     @IBOutlet var usergpa: UITextField!
@@ -136,7 +136,4 @@ class SignupDetailViewController: UITableViewController,UIImagePickerControllerD
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    @IBAction func backgroudtap(sender: UITapGestureRecognizer) {
-        self.view.endEditing(true);
-    }
 }

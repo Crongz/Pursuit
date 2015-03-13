@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import Parse
 
-class SignupViewcontroller: UITableViewController,UITextFieldDelegate {
+class PursuitSignupViewController: UITableViewController,UITextFieldDelegate {
     
     /**
     *   information input
@@ -59,10 +59,6 @@ class SignupViewcontroller: UITableViewController,UITextFieldDelegate {
     }
 
     
-    @IBAction func backgroudtap(sender: UITapGestureRecognizer) {
-        self.view.endEditing(true);
-    }
-    
     @IBAction func cancel(sender:UIButton)
     {
         self.dismissViewControllerAnimated(true, completion: nil)
@@ -76,7 +72,7 @@ class SignupViewcontroller: UITableViewController,UITextFieldDelegate {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if (segue.identifier == "signup_success") {
-            var svc = segue.destinationViewController as SignupDetailViewController;
+            var svc = segue.destinationViewController as PursuitSignupDetailViewController;
             svc.username = txtUsername.text.lowercaseString
             svc.userpassword = txtPassword.text
             svc.userbirthday = txtBirthday.text

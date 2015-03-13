@@ -92,8 +92,5 @@ class ProfileEditViewController: UITableViewController {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    @IBAction func backgroudtap(sender: UITapGestureRecognizer) {
-        self.view.endEditing(true);
-    }
     
 }
