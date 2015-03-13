@@ -162,13 +162,11 @@
 			children = (
 				68EA26441AB2D17E0052427B /* PopDatePicker */,
 				6844E46B1AA66C33000E779E /* AppDelegate.swift */,
-				5EF140E71AAD432C00C35DA2 /* Data.swift */,
-				5EF140E31AAD254F00C35DA2 /* MapViewController.swift */,
 				6844E4701AA66C33000E779E /* LoginViewController.swift */,
-				6844E4BD1AA68BCD000E779E /* SignupViewController.swift */,
-				68598FBB1AB2557000C40D0D /* SignupDetailViewController.swift */,
-				6844E4BF1AA6924D000E779E /* ProfileViewController.swift */,
-				6844E4C11AA6925F000E779E /* ProfileEditViewController.swift */,
+				5EF140E71AAD432C00C35DA2 /* Data.swift */,
+				68EA26481AB340340052427B /* Sign up */,
+				68EA26471AB3401E0052427B /* Profile */,
+				68EA26491AB3404F0052427B /* Map */,
 				6844E4721AA66C33000E779E /* Main.storyboard */,
 				6844E4751AA66C33000E779E /* Images.xcassets */,
 				6844E4771AA66C33000E779E /* LaunchScreen.xib */,
@@ -244,6 +242,32 @@
 				68EA26401AB2D17A0052427B /* PopDateViewController.xib */,
 			);
 			name = PopDatePicker;
+			sourceTree = "<group>";
+		};
+		68EA26471AB3401E0052427B /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				6844E4BF1AA6924D000E779E /* ProfileViewController.swift */,
+				6844E4C11AA6925F000E779E /* ProfileEditViewController.swift */,
+			);
+			name = Profile;
+			sourceTree = "<group>";
+		};
+		68EA26481AB340340052427B /* Sign up */ = {
+			isa = PBXGroup;
+			children = (
+				6844E4BD1AA68BCD000E779E /* SignupViewController.swift */,
+				68598FBB1AB2557000C40D0D /* SignupDetailViewController.swift */,
+			);
+			name = "Sign up";
+			sourceTree = "<group>";
+		};
+		68EA26491AB3404F0052427B /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				5EF140E31AAD254F00C35DA2 /* MapViewController.swift */,
+			);
+			name = Map;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

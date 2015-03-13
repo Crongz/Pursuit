@@ -42,9 +42,31 @@ class SignupDetailViewController: UITableViewController,UIImagePickerControllerD
         picker.delegate = self
         
     }
+    
+   
+    // Adding Image to Profile
+    @IBAction func addPhoto(sender: AnyObject) {
+        let actionSheetController: UIAlertController = UIAlertController()
+    
+        let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: .Cancel) { action -> Void in
+        }
+        actionSheetController.addAction(cancelAction)
+
+        let takePictureAction: UIAlertAction = UIAlertAction(title: "Take Picture", style: .Default) { action -> Void in
+            self.shootPhoto()
+        }
+        actionSheetController.addAction(takePictureAction)
+        let choosePictureAction: UIAlertAction = UIAlertAction(title: "Select photo from library", style: .Default) { action -> Void in
+            self.photofromLibrary()
+        }
+        actionSheetController.addAction(choosePictureAction)
+        
+        actionSheetController.popoverPresentationController?.sourceView = sender as UIView;
+        self.presentViewController(actionSheetController, animated: true, completion: nil)
+    }
+    
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
         var chosenImage = info[UIImagePickerControllerOriginalImage] as UIImage
-        myImageView.contentMode = .ScaleAspectFit
         myImageView.image = chosenImage
         dismissViewControllerAnimated(true, completion: nil)
     }
@@ -71,29 +93,7 @@ class SignupDetailViewController: UITableViewController,UIImagePickerControllerD
         }
     }
 
-    // using Add
-    @IBAction func addPhoto(sender: AnyObject) {
-        let actionSheetController: UIAlertController = UIAlertController()
-    
-        let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: .Cancel) { action -> Void in
-        }
-        actionSheetController.addAction(cancelAction)
-
-        let takePictureAction: UIAlertAction = UIAlertAction(title: "Take Picture", style: .Default) { action -> Void in
-            self.shootPhoto()
-        }
-        actionSheetController.addAction(takePictureAction)
-        let choosePictureAction: UIAlertAction = UIAlertAction(title: "Select photo from library", style: .Default) { action -> Void in
-            self.photofromLibrary()
-        }
-        actionSheetController.addAction(choosePictureAction)
-        
-        actionSheetController.popoverPresentationController?.sourceView = sender as UIView;
-        self.presentViewController(actionSheetController, animated: true, completion: nil)
-    }
-    
-
-    
+    // create new account
     @IBAction func create(sender:UIButton)
     {
         var user = PFUser()
