@@ -15,7 +15,7 @@ class LoginViewController: UIViewController {
     @IBOutlet var txtPassword : UITextField!
     
     @IBAction func log_in (sender : UIButton){
-        println("button tapped!")
+        println("button tapped!-login")
         PFUser.logInWithUsernameInBackground(txtUsername.text, password:txtPassword.text) {
             (user: PFUser!, error: NSError!) -> Void in
             if user != nil {
@@ -23,7 +23,7 @@ class LoginViewController: UIViewController {
                 println("Login success");
                 // Do stuff after successful login.
             } else {
-                println("Login failed");
+                println("Login failed-login");
                 // The login failed. Check error to see why.
             }
         }

@@ -32,32 +32,32 @@ class ProfileViewController: UITableViewController {
     var currentUser = PFUser.currentUser()
     
     override func viewDidLoad() {
+    }
+   
+    func refresh()
+    {
         username.text=currentUser.username;
         userpassword.text=currentUser.password;
-        //userfirst.text=currentUser["Firstname"] as? String;
-        //userlast.text=currentUser["Lastname"]  as? String;
-        //usergpa.text=currentUser["GPA"] as? String;
-        //usercompany.text=currentUser["Company"] as? String;
-        //useryears.text=currentUser["Years"] as? String;
+        userfirst.text=currentUser["Firstname"] as? String;
+        userlast.text=currentUser["Lastname"]  as? String;
+        usergpa.text=currentUser["GPA"] as? String;
+        usercompany.text=currentUser["Company"] as? String;
+        useryears.text=currentUser["Years"] as? String;
         userbirthday.text=currentUser["Birthday"] as? String;
         usergender.text=currentUser["Gender"] as? String;
-//        userskill1.text=currentUser["Skill1"] as? String;
-//        userskill2.text=currentUser["Skill2"] as? String;
-//        userskill3.text=currentUser["Skill3"] as? String;
+        userskill1.text=currentUser["Skill1"] as? String;
+        userskill2.text=currentUser["Skill2"] as? String;
+        userskill3.text=currentUser["Skill3"] as? String;
         userphone.text=currentUser["Phone"] as? String;
-//        usermajor.text=currentUser["Major"] as? String;
-//        userschool.text=currentUser["School"] as? String;
-//        userdegree.text=currentUser["Degree"] as? String;
+        usermajor.text=currentUser["Major"] as? String;
+        userschool.text=currentUser["School"] as? String;
+        userdegree.text=currentUser["Degree"] as? String;
         userlocation.text=currentUser["Location"] as? String;
-        
-        
     }
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "ShowCounterSegue" {
-        }
-    }
+    
     override func viewWillAppear(Bool) {
-        
+        refresh()
+
     }
 
 }

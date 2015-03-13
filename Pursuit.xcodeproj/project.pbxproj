@@ -42,6 +42,11 @@
 		6844E4BE1AA68BCD000E779E /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6844E4BD1AA68BCD000E779E /* SignupViewController.swift */; };
 		6844E4C01AA6924D000E779E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6844E4BF1AA6924D000E779E /* ProfileViewController.swift */; };
 		6844E4C21AA6925F000E779E /* ProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6844E4C11AA6925F000E779E /* ProfileEditViewController.swift */; };
+		68598FBC1AB2557000C40D0D /* SignupDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68598FBB1AB2557000C40D0D /* SignupDetailViewController.swift */; };
+		68EA26411AB2D17A0052427B /* PopDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EA263E1AB2D17A0052427B /* PopDatePicker.swift */; };
+		68EA26421AB2D17A0052427B /* PopDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EA263F1AB2D17A0052427B /* PopDateViewController.swift */; };
+		68EA26431AB2D17A0052427B /* PopDateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68EA26401AB2D17A0052427B /* PopDateViewController.xib */; };
+		68EA26461AB2D1A20052427B /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EA26451AB2D1A20052427B /* DateUtils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +100,11 @@
 		6844E4BD1AA68BCD000E779E /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		6844E4BF1AA6924D000E779E /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		6844E4C11AA6925F000E779E /* ProfileEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileEditViewController.swift; sourceTree = "<group>"; };
+		68598FBB1AB2557000C40D0D /* SignupDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupDetailViewController.swift; sourceTree = "<group>"; };
+		68EA263E1AB2D17A0052427B /* PopDatePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopDatePicker.swift; sourceTree = "<group>"; };
+		68EA263F1AB2D17A0052427B /* PopDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopDateViewController.swift; sourceTree = "<group>"; };
+		68EA26401AB2D17A0052427B /* PopDateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopDateViewController.xib; sourceTree = "<group>"; };
+		68EA26451AB2D1A20052427B /* DateUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,11 +160,13 @@
 		6844E4681AA66C33000E779E /* Pursuit */ = {
 			isa = PBXGroup;
 			children = (
+				68EA26441AB2D17E0052427B /* PopDatePicker */,
 				6844E46B1AA66C33000E779E /* AppDelegate.swift */,
-				5EF140E31AAD254F00C35DA2 /* MapViewController.swift */,
 				5EF140E71AAD432C00C35DA2 /* Data.swift */,
+				5EF140E31AAD254F00C35DA2 /* MapViewController.swift */,
 				6844E4701AA66C33000E779E /* LoginViewController.swift */,
 				6844E4BD1AA68BCD000E779E /* SignupViewController.swift */,
+				68598FBB1AB2557000C40D0D /* SignupDetailViewController.swift */,
 				6844E4BF1AA6924D000E779E /* ProfileViewController.swift */,
 				6844E4C11AA6925F000E779E /* ProfileEditViewController.swift */,
 				6844E4721AA66C33000E779E /* Main.storyboard */,
@@ -221,6 +233,17 @@
 				6844E4971AA66CE5000E779E /* whitePur.gif */,
 			);
 			name = Image;
+			sourceTree = "<group>";
+		};
+		68EA26441AB2D17E0052427B /* PopDatePicker */ = {
+			isa = PBXGroup;
+			children = (
+				68EA263E1AB2D17A0052427B /* PopDatePicker.swift */,
+				68EA263F1AB2D17A0052427B /* PopDateViewController.swift */,
+				68EA26451AB2D1A20052427B /* DateUtils.swift */,
+				68EA26401AB2D17A0052427B /* PopDateViewController.xib */,
+			);
+			name = PopDatePicker;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,6 +335,7 @@
 				6844E49E1AA66CE5000E779E /* userpicstuff.gif in Resources */,
 				6844E49A1AA66CE5000E779E /* NullProfile.png in Resources */,
 				6844E4981AA66CE5000E779E /* frame.png in Resources */,
+				68EA26431AB2D17A0052427B /* PopDateViewController.xib in Resources */,
 				6844E49C1AA66CE5000E779E /* Profile.png in Resources */,
 				6844E49F1AA66CE5000E779E /* whiteline.png in Resources */,
 				6844E49D1AA66CE5000E779E /* pursuit_logo.gif in Resources */,
@@ -333,11 +357,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				6844E4711AA66C33000E779E /* LoginViewController.swift in Sources */,
+				68EA26461AB2D1A20052427B /* DateUtils.swift in Sources */,
 				6844E46F1AA66C33000E779E /* Pursuit.xcdatamodeld in Sources */,
 				6844E4C01AA6924D000E779E /* ProfileViewController.swift in Sources */,
+				68EA26421AB2D17A0052427B /* PopDateViewController.swift in Sources */,
 				6844E4BE1AA68BCD000E779E /* SignupViewController.swift in Sources */,
 				6844E4C21AA6925F000E779E /* ProfileEditViewController.swift in Sources */,
+				68EA26411AB2D17A0052427B /* PopDatePicker.swift in Sources */,
 				6844E46C1AA66C33000E779E /* AppDelegate.swift in Sources */,
+				68598FBC1AB2557000C40D0D /* SignupDetailViewController.swift in Sources */,
 				5EF140E41AAD254F00C35DA2 /* MapViewController.swift in Sources */,
 				5EF140E81AAD432C00C35DA2 /* Data.swift in Sources */,
 			);

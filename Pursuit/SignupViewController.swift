@@ -10,55 +10,82 @@ import Foundation
 import UIKit
 import Parse
 
-class SignupViewcontroller: UITableViewController {
+class SignupViewcontroller: UITableViewController,UITextFieldDelegate {
+    
+    /**
+    *   information input
+    */
     @IBOutlet var txtUsername : UITextField!
     @IBOutlet var txtPassword : UITextField!
-    @IBOutlet var txtBirthday : UITextField!
+    @IBOutlet weak var txtBirthday : UITextField!
     @IBOutlet var txtGender : UITextField!
     @IBOutlet var txtPhone : UITextField!
     @IBOutlet var txtLocation : UITextField!
+
+    var popDatePicker : PopDatePicker?
+
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        popDatePicker = PopDatePicker(forTextField: txtBirthday)
+        txtBirthday.delegate=self
+    }
+    
+    func resign() {
+        
+        txtBirthday.resignFirstResponder()
+    }
+
+    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
+        
+        if (textField === txtBirthday) {
+            resign()
+            let formatter = NSDateFormatter()
+            formatter.dateStyle = .MediumStyle
+            formatter.timeStyle = .NoStyle
+            let initDate = formatter.dateFromString(txtBirthday.text)
+            
+            popDatePicker!.pick(self, initDate:initDate, dataChanged: { (newDate : NSDate, forTextField : UITextField) -> () in
+                
+                // here we don't use self (no retain cycle)
+                forTextField.text = newDate.ToDateMediumString()
+                
+            })
+            return false
+        }
+        else {
+            return true
+        }
+    }
+
+    
+    @IBAction func backgroudtap(sender: UITapGestureRecognizer) {
+        self.view.endEditing(true);
+    }
     
     @IBAction func cancel(sender:UIButton)
     {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    @IBAction func submit(sender:UIButton){
-        var user = PFUser()
-        user.username = txtUsername.text
-        user.password = txtPassword.text
-        user.email=txtUsername.text
-        // other fields can be set just like with PFObject
-        //user["Firstname"] = "FirstName"
-        //user["Lastname"] = "LastName"
-        //user["GPA"]="0.0"
-        //user["Company"]="Null"
-        //user["Years"]="0"
-        user["Birthday"]=txtBirthday.text
-        user["Gender"]=txtGender.text
-        //user["Skill1"]="Null"
-        //user["Skill2"]="Null"
-        //user["Skill3"]="Null"
-        user["Phone"]=txtPhone.text
-        //user["Major"]="Null"
-        //user["School"]="Null"
-        //user["Degree"]="Null"
-        user["Location"]=txtLocation.text
-        
-        user.signUpInBackgroundWithBlock {
-            (succeeded: Bool!, error: NSError!) -> Void in
-            if error == nil {
-                // Hooray! Let them use the app now.
-            } else {
-                let errorString = error.description
-                println(errorString)
-                // Show the errorString somewhere and let the user try again.
-            }
-        }
-        self.dismissViewControllerAnimated(true, completion: nil)
-
-       
+    
+    @IBAction func submit(sender:UIButton)
+    {
+        self.performSegueWithIdentifier("signup_success", sender: self)
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if (segue.identifier == "signup_success") {
+            var svc = segue.destinationViewController as SignupDetailViewController;
+            svc.username = txtUsername.text.lowercaseString
+            svc.userpassword = txtPassword.text
+            svc.userbirthday = txtBirthday.text
+            svc.usergender = txtGender.text
+            svc.userphone = txtPhone.text
+            svc.userlocation = txtLocation.text
 
+
+        }
+    }
 
 }
