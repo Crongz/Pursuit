@@ -12,7 +12,7 @@ import Foundation
 import UIKit
 import Parse
 
-class SignupDetailViewController: UITableViewController {
+class SignupDetailViewController: UITableViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     @IBOutlet var userfirst: UITextField!
     @IBOutlet var userlast: UITextField!
     @IBOutlet var usergpa: UITextField!
@@ -24,7 +24,9 @@ class SignupDetailViewController: UITableViewController {
     @IBOutlet var usermajor: UITextField!
     @IBOutlet var userschool: UITextField!
     @IBOutlet var userdegree: UITextField!
-        
+    @IBOutlet weak var myImageView: UIImageView!
+
+    
     var username: NSString = ""
     var userphone: NSString = ""
     var userpassword: NSString = ""
@@ -32,7 +34,43 @@ class SignupDetailViewController: UITableViewController {
     var userlocation: NSString = ""
     var userbirthday: NSString = ""
     
+    let picker = UIImagePickerController()
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+        picker.delegate = self
+        
+    }
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+        var chosenImage = info[UIImagePickerControllerOriginalImage] as UIImage
+        myImageView.contentMode = .ScaleAspectFit
+        myImageView.image = chosenImage
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func photofromLibrary() {
+        picker.allowsEditing = true
+        picker.sourceType = .PhotoLibrary
+        presentViewController(picker, animated: true, completion: nil)
+    }
+    func shootPhoto() {
+        if UIImagePickerController.availableCaptureModesForCameraDevice(.Rear) != nil {
+            picker.allowsEditing = false
+            picker.sourceType = UIImagePickerControllerSourceType.Camera
+            picker.cameraCaptureMode = .Photo
+            presentViewController(picker, animated: true, completion: nil)
+        } else {
+            let alertVC = UIAlertController(title: "No Camera", message: "Sorry, this device has no camera", preferredStyle: .Alert)
+            let okAction = UIAlertAction(title: "OK", style:.Default, handler: nil)
+            alertVC.addAction(okAction)
+            presentViewController(alertVC, animated: true, completion: nil)
+        }
+    }
+
     // using Add
     @IBAction func addPhoto(sender: AnyObject) {
         let actionSheetController: UIAlertController = UIAlertController()
@@ -42,15 +80,20 @@ class SignupDetailViewController: UITableViewController {
         actionSheetController.addAction(cancelAction)
 
         let takePictureAction: UIAlertAction = UIAlertAction(title: "Take Picture", style: .Default) { action -> Void in
+            self.shootPhoto()
         }
         actionSheetController.addAction(takePictureAction)
-        let choosePictureAction: UIAlertAction = UIAlertAction(title: "Choose From Camera Roll", style: .Default) { action -> Void in
+        let choosePictureAction: UIAlertAction = UIAlertAction(title: "Select photo from library", style: .Default) { action -> Void in
+            self.photofromLibrary()
         }
         actionSheetController.addAction(choosePictureAction)
         
         actionSheetController.popoverPresentationController?.sourceView = sender as UIView;
         self.presentViewController(actionSheetController, animated: true, completion: nil)
     }
+    
+
+    
     @IBAction func create(sender:UIButton)
     {
         var user = PFUser()

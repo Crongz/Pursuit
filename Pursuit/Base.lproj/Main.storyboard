@@ -795,6 +795,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="myImageView" destination="ivg-Ic-Ml9" id="Ek3-u8-5jX"/>
                         <outlet property="usercompany" destination="Wb5-Ua-ksJ" id="B4r-A8-1it"/>
                         <outlet property="userdegree" destination="HVC-41-STq" id="HmU-UE-dET"/>
                         <outlet property="userfirst" destination="GYk-pF-PUc" id="XiK-jY-tEQ"/>
