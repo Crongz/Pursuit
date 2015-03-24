@@ -40,11 +40,10 @@ class PursuitSignupDetailViewController: UITableViewController,UIImagePickerCont
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         picker.delegate = self
-        
     }
     
    
-    // Adding Image to Profile
+    /** Adding Image to Profile **/
     @IBAction func addPhoto(sender: AnyObject) {
         let actionSheetController: UIAlertController = UIAlertController()
     
@@ -93,7 +92,7 @@ class PursuitSignupDetailViewController: UITableViewController,UIImagePickerCont
         }
     }
 
-    // create new account
+    /** create new account **/
     @IBAction func create(sender:UIButton)
     {
         var user = PFUser()
@@ -115,6 +114,7 @@ class PursuitSignupDetailViewController: UITableViewController,UIImagePickerCont
         user["Major"] = usermajor.text
         user["School"] = userschool.text
         user["Degree"] = userdegree.text
+        user["Type"] = "Pursuit"
         
         user.signUpInBackgroundWithBlock {
             (succeeded: Bool!, error: NSError!) -> Void in

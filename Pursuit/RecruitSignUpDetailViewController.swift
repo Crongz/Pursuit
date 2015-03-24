@@ -12,5 +12,10 @@ import Parse
 
 class RecruitSignUpDetailViewController: UITableViewController {
     
+    @IBOutlet weak var summaryText: UITextView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
     
 }

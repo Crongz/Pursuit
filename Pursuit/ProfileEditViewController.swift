@@ -33,6 +33,7 @@ class ProfileEditViewController: UITableViewController {
     var currentUser = PFUser.currentUser()
 
     override func viewDidLoad() {
+        
         username.text=currentUser.username;
         userpassword.text=currentUser.password;
         userfirst.text=currentUser["Firstname"] as? String;
@@ -82,8 +83,10 @@ class ProfileEditViewController: UITableViewController {
 //                println(errorString)
 //            }
 //        }
+//      PFUser.currentUser().fetchFromLocalDatastore()
+        
         PFUser.currentUser().save()
-        PFUser.currentUser().fetch()
+//      PFUser.currentUser().fetch()
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
