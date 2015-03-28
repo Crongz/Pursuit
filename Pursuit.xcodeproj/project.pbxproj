@@ -265,8 +265,8 @@
 				6844E4BD1AA68BCD000E779E /* PursuitSignUpViewController.swift */,
 				68598FBB1AB2557000C40D0D /* PursuitSignupDetailViewController.swift */,
 				68EA264A1AB351670052427B /* RecruitSignUpViewController.swift */,
-				68EA264C1AB351840052427B /* RecruitSignUpDetailViewController.swift */,
 				6831087D1AC124A300C8DB8D /* RecruitCompanyViewController.swift */,
+				68EA264C1AB351840052427B /* RecruitSignUpDetailViewController.swift */,
 			);
 			name = SignUp;
 			sourceTree = "<group>";

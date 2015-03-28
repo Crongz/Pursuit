@@ -58,7 +58,7 @@ class PursuitSignupViewController: UITableViewController,UITextFieldDelegate {
     
     /** send information to next slide **/
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-        if (segue.identifier == "signup_success") {
+        if (segue.identifier == "pursuit_signup_success") {
             var svc = segue.destinationViewController as PursuitSignupDetailViewController;
             svc.username = txtUsername.text.lowercaseString
             svc.userpassword = txtPassword.text
@@ -86,7 +86,7 @@ class PursuitSignupViewController: UITableViewController,UITextFieldDelegate {
         println(overlap);
         if(overlap.count == 0)
         {
-            self.performSegueWithIdentifier("signup_success", sender: self)
+            self.performSegueWithIdentifier("pursuit_signup_success", sender: self)
         }
         else
         {
