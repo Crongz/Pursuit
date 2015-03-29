@@ -100,7 +100,6 @@ class RecruitCompanyViewController: UITableViewController,UIImagePickerControlle
     @IBAction func next(sender:UIButton)
     {
         self.performSegueWithIdentifier("recruit_next", sender: self)
-K
     }
     
     @IBAction func cancel(sender:UIButton)

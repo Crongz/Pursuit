@@ -12,7 +12,7 @@ import Foundation
 import UIKit
 import Parse
 
-class ProfileEditViewController: UITableViewController {
+class P_ProfileEditViewController: UITableViewController {
     @IBOutlet var username: UITextField!
     @IBOutlet var userpassword :UITextField!
     @IBOutlet var userfirst: UITextField!

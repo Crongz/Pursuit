@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import Parse
 
-class ProfileViewController: UITableViewController {
+class P_ProfileViewController: UITableViewController {
     
     @IBOutlet var username: UILabel!
     @IBOutlet var userpassword :UILabel!
